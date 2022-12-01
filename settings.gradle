@@ -1,0 +1,41 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        maven {
+            url "https://gitlab.com/api/v4/groups/13791991/-/packages/maven"
+            name "GitLab"
+            credentials(HttpHeaderCredentials) {
+                name = 'Private-Token'
+                value = "glpat-x5o5hNYBsfybDNJx9fGz"
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url "https://gitlab.com/api/v4/groups/13791991/-/packages/maven"
+            name "GitLab"
+            credentials(HttpHeaderCredentials) {
+                name = 'Private-Token'
+                value = "glpat-x5o5hNYBsfybDNJx9fGz"
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
+}
+
+rootProject.name = "leetcode-data-builder"
+include ':app'
+include ':data_builder_annotations'
+include ':data_builder_processor'
+include ':data_builder_ksp'
